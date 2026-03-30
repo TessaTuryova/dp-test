@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testovacie zadania</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Testovacie zadania</h1>
+
+      <h2>Podmienky</h2>
+      <ol>
+        <li>max 30 minút na vypracovanie</li>
+        <li>spravené úlohy odoslať na email (v zipe ak treba): terezia.turyova@student.tuke.sk</li>
+        <li>ukážte, že ste mi odoslali na email a dostanete odmenu - prví piati dostanú energeťák, ostatní inú odmenu</li>
+        <li>ak ste boli vyzvaní používať AI, tak napíšte do emailu aké AI ste pri riešení použili</li>
+        <li>na konci mi prosím vyplňte tento krátky dotazník:</li>
+      </ol>
+
+      <section class="task-section" data-copy-section>
+        <div class="task-header">
+          <h2>1) Deliteľnosť</h2>
+          <button type="button" class="copy-btn" data-copy-btn>Kopírovať úlohu</button>
+        </div>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+        <h3>Zadanie</h3>
+        <ul>
+          <p>Sprav program, ktorý:</p>
+          <li>načíta celé číslo zo vstupu</li>
+          <li>vypíše "ano", ak je číslo deliteľné 3 alebo 5, "nie" ak nie je</li>
+          <li>môžete použiť: aritmetika, výpis do konzoly, cyklus</li>
+          <li>nemôžete použiť: if, switch, ternárny operátor, logické operátory (&amp;&amp;, ||)</li>
+        </ul>
+        <h3>Kontrola</h3>
+        <ul>
+          <li>riešenie funguje ako má (+ 1b)</li>
+          <li>riešenie má max 3 riadky kódu (+ 1b)</li>
+          <li>riešenie je okomentované, ako funguje (napr. block comment - toto sa neráta do predošlej požiadavky) (+ 1b)</li>
+        </ul>
+      </section>
+
+      <section class="task-section" data-copy-section>
+        <div class="task-header">
+          <h2>2) Porovnanie</h2>
+          <button type="button" class="copy-btn" data-copy-btn>Kopírovať úlohu</button>
+        </div>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+        <h3>Zadanie</h3>
+        <ul>
+          <p>Sprav program, ktorý:</p>
+          <li>načíta sa pole 5 čísel zo vstupu</li>
+          <li>na výstup chceme dostať najväčšie z nich</li>
+          <li>môžete použiť: logické operátory (porovnávanie), premenné</li>
+          <li>nemôžete použiť: cykly, rekurziu, knižničné funkcie na porovnávanie (max, sort, atď)</li>
+        </ul>
+        <h3>Kontrola</h3>
+        <ul>
+          <li>riešenie funguje ako má (+ 1b)</li>
+          <li>riešenie obsahuje minimálny počet porovnaní (+ 1b)</li>
+          <li>riešenie je okomentované, ako funguje (napr. block comment - toto sa neráta do predošlej požiadavky) (+ 1b)</li>
+        </ul>
+      </section>
+
+      <section class="task-section" data-copy-section>
+        <div class="task-header">
+          <h2>3) Úprava</h2>
+          <button type="button" class="copy-btn" data-copy-btn>Kopírovať úlohu</button>
+        </div>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+        <h3>Zadanie</h3>
+        <ul>
+          <li>vysvetlite, ešte pred spustením kódu, čo by mohol tento kód robiť (napíšte to napr. do .txt, alebo block comment v kóde - ako chcete)</li>
+          <li>prepíšte ho tak, aby bol zrozumiteľnejší, podľa štandardných konvencií</li>
+        </ul>
+        <h3>Kontrola</h3>
+        <ul>
+          <li>riešenie je popísané, čo vlastne robí (vlastnými slovami) (+ 1b)</li>
+          <li>riešenie funguje ako má (nič sa nepobabralo po úpravách) (+ 1b)</li>
+          <li>riešenie spĺňa požiadavky štandardných konvencií (odsadenie, názvy premenných, atď.) (+ 1b)</li>
+        </ul>
+
+        <p class="muted">Pôvodný kód:</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {int a=0,b=1;
+    a=0;b=1;
+    for(int i=0;i&lt;6;i++){int d=a+b;a=b;b=d;}
+    printf("%d",b);
+    return 0;}
+</code></pre>
+      </section>
+
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

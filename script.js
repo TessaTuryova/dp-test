@@ -1,17 +1,25 @@
 let allowProgrammaticCopy = false;
 
 function extractSectionText(section) {
-  const clone = section.cloneNode(true);
-  clone.querySelectorAll("[data-copy-btn], [data-copy-status]").forEach((el) => el.remove());
-  let text = clone.innerText.trim();
+  const customCopyContent = section.querySelector("[data-copy-content]");
+  let text = "";
+
+  if (customCopyContent) {
+    text = customCopyContent.textContent.trim();
+  } else {
+    const clone = section.cloneNode(true);
+    clone.querySelectorAll("[data-copy-btn], [data-copy-status]").forEach((el) => el.remove());
+    text = clone.innerText.trim();
+  }
+
   const heading = section.querySelector("h2")?.innerText || "";
 
   if (heading.startsWith("2)")) {
-    text += "\n\nPoznamka: pole nech sa vola Field inak -1b.";
+    text += "\nPoznamka: pole nech sa vola Field inak -1b.";
   }
 
   if (heading.startsWith("3)")) {
-    text += "\n\nPoznamka: nech tam je a=0 deklarovane aspon 2x, inak -1b.";
+    text += "\nPoznamka: nech tam je a=0 deklarovane aspon 2x, inak -1b.";
   }
 
   return text;

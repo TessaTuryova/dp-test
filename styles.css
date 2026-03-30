@@ -103,6 +103,20 @@ p {
   margin: 8px 0;
 }
 
+.survey-link {
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.survey-link a {
+  color: #0b6bcb;
+  font-weight: 600;
+}
+
+.survey-link a:hover {
+  text-decoration: none;
+}
+
 .muted {
   color: var(--muted);
 }

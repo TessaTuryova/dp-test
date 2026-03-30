@@ -17,8 +17,74 @@
         <li>spravené úlohy odoslať na email (v zipe ak treba): terezia.turyova@student.tuke.sk</li>
         <li>ukážte, že ste mi odoslali na email a dostanete odmenu - prví piati dostanú energeťák, ostatní inú odmenu</li>
         <li>ak ste boli vyzvaní používať AI, tak napíšte do emailu aké AI ste pri riešení použili</li>
-        <li>na konci mi prosím vyplňte tento krátky dotazník:</li>
+        <li>na konci mi prosím vyplňte <a href="https://forms.gle/yJcL8DksgebugyLL8" target="_blank" rel="noopener noreferrer">tento krátky dotazník</a></li>
       </ol>
+
+      <section class="task-section" data-copy-section>
+        <div class="task-header">
+          <h2>Pre uľahčenie</h2>
+          <button type="button" class="copy-btn" data-copy-btn>Copy Makefile</button>
+        </div>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+        <p>Tu si skopírujte obsah Makefile pre uľahčenie, ak chcete.</p>
+        <pre data-copy-content hidden><code>CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+
+# --------- KONTROLY ---------
+
+check1:
+	@echo "Kontrola ulohy 1..."
+	@if grep -E '\bif\b|\bswitch\b|\?\s*.*:|&&|\|\|' uloha1.c; then \
+		echo "Chyba: Pouzite zakazane konstrukcie (if, switch, ?:, &&, ||)"; \
+		exit 1; \
+	else \
+		echo "OK"; \
+	fi
+
+check2:
+	@echo "Kontrola ulohy 2..."
+	@if grep -E '\bfor\b|\bwhile\b|\bdo\b|max\s*\(|sort\s*\(' uloha2.c; then \
+		echo "Chyba: Pouzite zakazane konstrukcie (cykly alebo kniznice)"; \
+		exit 1; \
+	else \
+		echo "OK"; \
+	fi
+
+check3:
+	@echo "Kontrola ulohy 3..."
+	@echo "OK"; \
+
+# --------- BUILD ---------
+
+uloha1: check1
+	$(CC) $(CFLAGS) uloha1.c -o uloha1
+
+uloha2: check2
+	$(CC) $(CFLAGS) uloha2.c -o uloha2
+
+uloha3: check3
+	$(CC) $(CFLAGS) uloha3.c -o uloha3
+
+all: uloha1 uloha2 uloha3
+
+# --------- RUN ---------
+
+1: uloha1
+	./uloha1
+
+2: uloha2
+	./uloha2
+
+3: uloha3
+	./uloha3
+
+# --------- CLEAN ---------
+
+clean:
+	rm -f uloha1 uloha2 uloha3
+</code></pre>
+  <p class="muted">Stručne: <strong>make all</strong> prekompiluje všetko, <strong>make 1</strong>, <strong>make 2</strong>, <strong>make 3</strong> spustia úlohy pri názvoch <strong>uloha1.c</strong>, <strong>uloha2.c</strong>, <strong>uloha3.c</strong>.</p>
+      </section>
 
       <section class="task-section" data-copy-section>
         <div class="task-header">
